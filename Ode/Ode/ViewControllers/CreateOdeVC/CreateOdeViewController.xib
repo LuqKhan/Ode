@@ -10,6 +10,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreateOdeViewController" customModule="Ode" customModuleProvider="target">
             <connections>
                 <outlet property="cameraPreviewView" destination="s4b-FB-HKV" id="6GA-nq-hUl"/>
+                <outlet property="recordButton" destination="65k-6a-5en" id="75Z-wD-bTe"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,11 +23,21 @@
                     <rect key="frame" x="20" y="73" width="374" height="673"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="65k-6a-5en">
+                    <rect key="frame" x="170" y="768" width="74" height="30"/>
+                    <state key="normal" title="Record"/>
+                    <connections>
+                        <action selector="recordButtonTapped:" destination="-1" eventType="touchUpInside" id="7TX-4d-uFE"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="65k-6a-5en" secondAttribute="trailing" constant="170" id="932-FS-qnB"/>
                 <constraint firstItem="s4b-FB-HKV" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="29" id="9aJ-eg-gVR"/>
+                <constraint firstItem="65k-6a-5en" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="768" id="Xgw-fa-v0b"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="s4b-FB-HKV" secondAttribute="trailing" constant="20" id="eDH-BD-PX6"/>
+                <constraint firstItem="65k-6a-5en" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="170" id="fD6-LJ-9tS"/>
                 <constraint firstItem="s4b-FB-HKV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="o0W-x7-UNb"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="s4b-FB-HKV" secondAttribute="bottom" constant="116" id="o7o-h9-fTh"/>
             </constraints>

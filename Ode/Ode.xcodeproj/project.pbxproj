@@ -76,10 +76,8 @@
 		EFAE054724F58B17003249B7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				EFAE054324F58B0E003249B7 /* LoginViewController.swift */,
-				EFAE054424F58B0E003249B7 /* LoginViewController.xib */,
-				EFAE054824F58DA7003249B7 /* CreateOdeViewController.swift */,
-				EFAE054924F58DA7003249B7 /* CreateOdeViewController.xib */,
+				EFAE056F24F5BB80003249B7 /* LoginVC */,
+				EFAE057024F5BB8E003249B7 /* CreateOdeVC */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -90,6 +88,24 @@
 				EFAE056C24F5A824003249B7 /* CameraPreviewView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		EFAE056F24F5BB80003249B7 /* LoginVC */ = {
+			isa = PBXGroup;
+			children = (
+				EFAE054324F58B0E003249B7 /* LoginViewController.swift */,
+				EFAE054424F58B0E003249B7 /* LoginViewController.xib */,
+			);
+			path = LoginVC;
+			sourceTree = "<group>";
+		};
+		EFAE057024F5BB8E003249B7 /* CreateOdeVC */ = {
+			isa = PBXGroup;
+			children = (
+				EFAE054824F58DA7003249B7 /* CreateOdeViewController.swift */,
+				EFAE054924F58DA7003249B7 /* CreateOdeViewController.xib */,
+			);
+			path = CreateOdeVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,6 +321,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HQGJU6Q728;
 				INFOPLIST_FILE = Ode/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -322,6 +339,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HQGJU6Q728;
 				INFOPLIST_FILE = Ode/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

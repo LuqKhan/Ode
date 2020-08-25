@@ -12,16 +12,19 @@ import AVFoundation
 
 //EDIT VC
 //DROP VC
-class CreateOdeViewController: UIViewController {
+class CreateOdeViewController: UIViewController, AVCaptureFileOutputRecordingDelegate {
+    
 
     @IBOutlet weak var cameraPreviewView: CameraPreviewView!
     lazy private var captureSession = AVCaptureSession()
     lazy private var fileOutput = AVCaptureMovieFileOutput()
-    
+    @IBOutlet weak var recordButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        captureSession.startRunning()
+         captureSession.startRunning()
+         setUpCaptureSession()
+        cameraPreviewView.videoPlayerView.videoGravity = .resizeAspectFill
         self.view.backgroundColor = .black
     }
     
@@ -29,6 +32,7 @@ class CreateOdeViewController: UIViewController {
         super.viewDidDisappear(true)
         captureSession.stopRunning()
     }
+    
 
     private func setUpCaptureSession() {
         let camera = bestCamera()
@@ -65,7 +69,7 @@ class CreateOdeViewController: UIViewController {
         captureSession.commitConfiguration()
            
            
-           cameraPreviewView.session = captureSession
+        self.cameraPreviewView.session = captureSession
     }
     
     private func bestCamera() -> AVCaptureDevice {
@@ -86,14 +90,50 @@ class CreateOdeViewController: UIViewController {
         }
         fatalError("No audio")
     }
-    /*
-    // MARK: - Navigation
+    @IBAction func recordButtonTapped(_ sender: UIButton) {
+    toggleRecord()
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
-    */
 
+    
+    private func toggleRecord() {
+        if fileOutput.isRecording {
+            self.recordButton.setTitle("Record", for: .normal)
+            fileOutput.stopRecording()
+            updateViews()
+        } else {
+            self.recordButton.setTitle("Stop", for: .normal)
+            fileOutput.startRecording(to: newRecordingURL(), recordingDelegate: self)
+            updateViews()
+        }
+    }
+        
+        private func newRecordingURL() -> URL {
+            let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+
+            let formatter = ISO8601DateFormatter()
+            formatter.formatOptions = [.withInternetDateTime]
+
+            let name = formatter.string(from: Date())
+            let fileURL = documentsDirectory.appendingPathComponent(name).appendingPathExtension("mov")
+            return fileURL
+        
+    }
+    
+    private func updateViews() {
+        recordButton.isSelected = fileOutput.isRecording
+        
+    }
+    
+    func fileOutput(_ output: AVCaptureFileOutput, didStartRecordingTo fileURL: URL, from connections: [AVCaptureConnection]) {
+        updateViews()
+    }
+    
+    func fileOutput(_ output: AVCaptureFileOutput, didFinishRecordingTo outputFileURL: URL, from connections: [AVCaptureConnection], error: Error?) {
+        if let error = error {
+            print("Error saving video: \(error)")
+        }
+        print("Video: \(outputFileURL.path)")
+        updateViews()
+    }
 }
