@@ -15,6 +15,7 @@
 		EFAE054624F58B0E003249B7 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFAE054424F58B0E003249B7 /* LoginViewController.xib */; };
 		EFAE054A24F58DA7003249B7 /* CreateOdeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAE054824F58DA7003249B7 /* CreateOdeViewController.swift */; };
 		EFAE054B24F58DA7003249B7 /* CreateOdeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFAE054924F58DA7003249B7 /* CreateOdeViewController.xib */; };
+		EFAE056D24F5A824003249B7 /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAE056C24F5A824003249B7 /* CameraPreviewView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		EFAE054424F58B0E003249B7 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		EFAE054824F58DA7003249B7 /* CreateOdeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOdeViewController.swift; sourceTree = "<group>"; };
 		EFAE054924F58DA7003249B7 /* CreateOdeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateOdeViewController.xib; sourceTree = "<group>"; };
+		EFAE056C24F5A824003249B7 /* CameraPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreviewView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			children = (
 				EFAE052F24F589FD003249B7 /* AppDelegate.swift */,
 				EFAE053124F589FD003249B7 /* SceneDelegate.swift */,
+				EFAE056E24F5A82A003249B7 /* Views */,
 				EFAE054724F58B17003249B7 /* ViewControllers */,
 				EFAE053824F589FF003249B7 /* Assets.xcassets */,
 				EFAE053A24F589FF003249B7 /* LaunchScreen.storyboard */,
@@ -79,6 +82,14 @@
 				EFAE054924F58DA7003249B7 /* CreateOdeViewController.xib */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		EFAE056E24F5A82A003249B7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EFAE056C24F5A824003249B7 /* CameraPreviewView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,6 +166,7 @@
 			files = (
 				EFAE054524F58B0E003249B7 /* LoginViewController.swift in Sources */,
 				EFAE053024F589FD003249B7 /* AppDelegate.swift in Sources */,
+				EFAE056D24F5A824003249B7 /* CameraPreviewView.swift in Sources */,
 				EFAE053224F589FD003249B7 /* SceneDelegate.swift in Sources */,
 				EFAE054A24F58DA7003249B7 /* CreateOdeViewController.swift in Sources */,
 			);
