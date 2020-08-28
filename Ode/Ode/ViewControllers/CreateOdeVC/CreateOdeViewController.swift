@@ -14,18 +14,45 @@ import AVFoundation
 //DROP VC
 class CreateOdeViewController: UIViewController, AVCaptureFileOutputRecordingDelegate {
     
-
+    @IBOutlet weak var videoPlayerView: VideoPlayerView!
+    
+    @IBOutlet weak var editButton: UIButton!
+    var movieURL: URL?
     @IBOutlet weak var cameraPreviewView: CameraPreviewView!
     lazy private var captureSession = AVCaptureSession()
     lazy private var fileOutput = AVCaptureMovieFileOutput()
     @IBOutlet weak var recordButton: UIButton!
+    var player: AVPlayer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let barButtonItem = UIBarButtonItem(title: "Edit Node", style: .plain, target: self, action: #selector(self.navigateToEdit))
+        
+        self.navigationItem.rightBarButtonItem = barButtonItem
+        
+        self.videoPlayerView.alpha = 0
          captureSession.startRunning()
          setUpCaptureSession()
         cameraPreviewView.videoPlayerView.videoGravity = .resizeAspectFill
         self.view.backgroundColor = .black
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTapGesture(_:)))
+            view.addGestureRecognizer(tapGesture)
+        }
+
+        @objc func handleTapGesture(_ tapGesture: UITapGestureRecognizer) {
+            print("tap")
+            switch(tapGesture.state) {
+                
+            case .ended:
+                replayMovie()
+            default:
+                print("Handled other states: \(tapGesture.state)")
+            }
+    }
+    
+    @objc func navigateToEdit() {
+        let editVC = EditNodeViewController()
+        self.navigationController?.pushViewController(editVC, animated: true)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -92,16 +119,35 @@ class CreateOdeViewController: UIViewController, AVCaptureFileOutputRecordingDel
     }
     @IBAction func recordButtonTapped(_ sender: UIButton) {
     toggleRecord()
-
     }
-
     
+    private func playVideo(url: URL) {
+        self.movieURL = url
+        let player = AVPlayer(url: url)
+        self.player = player
+        self.videoPlayerView.player = player
+        player.seek(to: CMTime.zero)
+        player.play()
+    }
+    
+    @objc func replayMovie(){
+        self.player?.seek(to: CMTime.zero)
+        self.player?.play()
+    }
+    
+    @IBAction func editButtonTapped(_ sender: UIButton) {
+        let editVC = EditNodeViewController()
+        editVC.movieURL = self.movieURL
+        self.navigationController?.pushViewController(editVC, animated: true)
+    }
     private func toggleRecord() {
         if fileOutput.isRecording {
-            self.recordButton.setTitle("Record", for: .normal)
             fileOutput.stopRecording()
+            self.recordButton.setTitle("Record", for: .normal)
             updateViews()
+            self.videoPlayerView.alpha = 1
         } else {
+            self.videoPlayerView.alpha = 0
             self.recordButton.setTitle("Stop", for: .normal)
             fileOutput.startRecording(to: newRecordingURL(), recordingDelegate: self)
             updateViews()
@@ -135,5 +181,8 @@ class CreateOdeViewController: UIViewController, AVCaptureFileOutputRecordingDel
         }
         print("Video: \(outputFileURL.path)")
         updateViews()
+        DispatchQueue.main.async {
+            self.playVideo(url: outputFileURL)
+        }
     }
 }

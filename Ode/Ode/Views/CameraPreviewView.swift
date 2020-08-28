@@ -24,13 +24,4 @@ class CameraPreviewView: UIView {
            get { return videoPlayerView.session }
            set { videoPlayerView.session = newValue }
        }
-    
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
-
 }

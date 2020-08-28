@@ -16,6 +16,11 @@
 		EFAE054A24F58DA7003249B7 /* CreateOdeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAE054824F58DA7003249B7 /* CreateOdeViewController.swift */; };
 		EFAE054B24F58DA7003249B7 /* CreateOdeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFAE054924F58DA7003249B7 /* CreateOdeViewController.xib */; };
 		EFAE056D24F5A824003249B7 /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAE056C24F5A824003249B7 /* CameraPreviewView.swift */; };
+		EFAE057224F6AFA4003249B7 /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAE057124F6AFA4003249B7 /* VideoPlayerView.swift */; };
+		EFAE057524F85929003249B7 /* EditNodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAE057324F85929003249B7 /* EditNodeViewController.swift */; };
+		EFAE057624F85929003249B7 /* EditNodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFAE057424F85929003249B7 /* EditNodeViewController.xib */; };
+		EFAE057A24F860EA003249B7 /* DropOdeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAE057824F860EA003249B7 /* DropOdeViewController.swift */; };
+		EFAE057B24F860EA003249B7 /* DropOdeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFAE057924F860EA003249B7 /* DropOdeViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +35,11 @@
 		EFAE054824F58DA7003249B7 /* CreateOdeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOdeViewController.swift; sourceTree = "<group>"; };
 		EFAE054924F58DA7003249B7 /* CreateOdeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateOdeViewController.xib; sourceTree = "<group>"; };
 		EFAE056C24F5A824003249B7 /* CameraPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreviewView.swift; sourceTree = "<group>"; };
+		EFAE057124F6AFA4003249B7 /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
+		EFAE057324F85929003249B7 /* EditNodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNodeViewController.swift; sourceTree = "<group>"; };
+		EFAE057424F85929003249B7 /* EditNodeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditNodeViewController.xib; sourceTree = "<group>"; };
+		EFAE057824F860EA003249B7 /* DropOdeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropOdeViewController.swift; sourceTree = "<group>"; };
+		EFAE057924F860EA003249B7 /* DropOdeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DropOdeViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +88,8 @@
 			children = (
 				EFAE056F24F5BB80003249B7 /* LoginVC */,
 				EFAE057024F5BB8E003249B7 /* CreateOdeVC */,
+				EFAE057724F85930003249B7 /* EditNodeVC */,
+				EFAE057C24F860F1003249B7 /* DropOdeVC */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -86,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				EFAE056C24F5A824003249B7 /* CameraPreviewView.swift */,
+				EFAE057124F6AFA4003249B7 /* VideoPlayerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -106,6 +119,24 @@
 				EFAE054924F58DA7003249B7 /* CreateOdeViewController.xib */,
 			);
 			path = CreateOdeVC;
+			sourceTree = "<group>";
+		};
+		EFAE057724F85930003249B7 /* EditNodeVC */ = {
+			isa = PBXGroup;
+			children = (
+				EFAE057324F85929003249B7 /* EditNodeViewController.swift */,
+				EFAE057424F85929003249B7 /* EditNodeViewController.xib */,
+			);
+			path = EditNodeVC;
+			sourceTree = "<group>";
+		};
+		EFAE057C24F860F1003249B7 /* DropOdeVC */ = {
+			isa = PBXGroup;
+			children = (
+				EFAE057824F860EA003249B7 /* DropOdeViewController.swift */,
+				EFAE057924F860EA003249B7 /* DropOdeViewController.xib */,
+			);
+			path = DropOdeVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,10 +197,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFAE057B24F860EA003249B7 /* DropOdeViewController.xib in Resources */,
 				EFAE053C24F589FF003249B7 /* LaunchScreen.storyboard in Resources */,
 				EFAE053924F589FF003249B7 /* Assets.xcassets in Resources */,
 				EFAE054624F58B0E003249B7 /* LoginViewController.xib in Resources */,
 				EFAE054B24F58DA7003249B7 /* CreateOdeViewController.xib in Resources */,
+				EFAE057624F85929003249B7 /* EditNodeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,9 +215,12 @@
 			files = (
 				EFAE054524F58B0E003249B7 /* LoginViewController.swift in Sources */,
 				EFAE053024F589FD003249B7 /* AppDelegate.swift in Sources */,
+				EFAE057A24F860EA003249B7 /* DropOdeViewController.swift in Sources */,
+				EFAE057524F85929003249B7 /* EditNodeViewController.swift in Sources */,
 				EFAE056D24F5A824003249B7 /* CameraPreviewView.swift in Sources */,
 				EFAE053224F589FD003249B7 /* SceneDelegate.swift in Sources */,
 				EFAE054A24F58DA7003249B7 /* CreateOdeViewController.swift in Sources */,
+				EFAE057224F6AFA4003249B7 /* VideoPlayerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

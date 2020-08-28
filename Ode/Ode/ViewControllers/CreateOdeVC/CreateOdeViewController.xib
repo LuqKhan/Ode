@@ -10,7 +10,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreateOdeViewController" customModule="Ode" customModuleProvider="target">
             <connections>
                 <outlet property="cameraPreviewView" destination="s4b-FB-HKV" id="6GA-nq-hUl"/>
+                <outlet property="editButton" destination="48q-TP-6GN" id="cmF-TF-F3v"/>
                 <outlet property="recordButton" destination="65k-6a-5en" id="75Z-wD-bTe"/>
+                <outlet property="videoPlayerView" destination="4qo-oD-0hO" id="9eF-vv-lFz"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,8 +22,20 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s4b-FB-HKV" customClass="CameraPreviewView" customModule="Ode" customModuleProvider="target">
-                    <rect key="frame" x="20" y="73" width="374" height="673"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <rect key="frame" x="20" y="144" width="374" height="544"/>
+                    <subviews>
+                        <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4qo-oD-0hO" customClass="VideoPlayerView" customModule="Ode" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="374" height="544"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="4qo-oD-0hO" firstAttribute="leading" secondItem="s4b-FB-HKV" secondAttribute="leading" id="5bq-aQ-n6X"/>
+                        <constraint firstAttribute="bottom" secondItem="4qo-oD-0hO" secondAttribute="bottom" id="OyS-Id-Yvt"/>
+                        <constraint firstAttribute="trailing" secondItem="4qo-oD-0hO" secondAttribute="trailing" id="Rot-vP-oMM"/>
+                        <constraint firstItem="4qo-oD-0hO" firstAttribute="top" secondItem="s4b-FB-HKV" secondAttribute="top" id="sOf-9m-sQj"/>
+                    </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="65k-6a-5en">
                     <rect key="frame" x="170" y="768" width="74" height="30"/>
@@ -30,16 +44,29 @@
                         <action selector="recordButtonTapped:" destination="-1" eventType="touchUpInside" id="7TX-4d-uFE"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="48q-TP-6GN">
+                    <rect key="frame" x="325" y="768" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="Gpb-pt-Sch"/>
+                    </constraints>
+                    <state key="normal" title="Edit"/>
+                    <connections>
+                        <action selector="editButtonTapped:" destination="-1" eventType="touchUpInside" id="nfP-F6-qgg"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="65k-6a-5en" secondAttribute="trailing" constant="170" id="932-FS-qnB"/>
-                <constraint firstItem="s4b-FB-HKV" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="29" id="9aJ-eg-gVR"/>
+                <constraint firstItem="s4b-FB-HKV" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="100" id="9aJ-eg-gVR"/>
+                <constraint firstItem="65k-6a-5en" firstAttribute="top" secondItem="s4b-FB-HKV" secondAttribute="bottom" constant="80" id="LgN-hB-ejt"/>
+                <constraint firstItem="48q-TP-6GN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="325" id="Win-5I-wf0"/>
                 <constraint firstItem="65k-6a-5en" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="768" id="Xgw-fa-v0b"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="s4b-FB-HKV" secondAttribute="trailing" constant="20" id="eDH-BD-PX6"/>
                 <constraint firstItem="65k-6a-5en" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="170" id="fD6-LJ-9tS"/>
+                <constraint firstItem="48q-TP-6GN" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="768" id="fo3-ri-sS0"/>
                 <constraint firstItem="s4b-FB-HKV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="o0W-x7-UNb"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="s4b-FB-HKV" secondAttribute="bottom" constant="116" id="o7o-h9-fTh"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="48q-TP-6GN" secondAttribute="trailing" constant="59" id="s8k-j3-y9p"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="140.57971014492756" y="122.54464285714285"/>
