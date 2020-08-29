@@ -26,27 +26,16 @@
                     <rect key="frame" x="0.0" y="591" width="146" height="156"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zZD-z2-h98">
-                    <rect key="frame" x="308" y="704" width="86" height="43"/>
-                    <state key="normal" title="Drop"/>
-                    <connections>
-                        <action selector="dropTapped:" destination="-1" eventType="touchUpInside" id="wcj-IH-ENS"/>
-                    </connections>
-                </button>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="zZD-z2-h98" secondAttribute="bottom" constant="149" id="63q-Vk-oHD"/>
                 <constraint firstItem="DDK-9h-w2a" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="A8Y-A1-hRl"/>
                 <constraint firstItem="DDK-9h-w2a" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Inw-Sb-nJB"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="DDK-9h-w2a" secondAttribute="bottom" constant="82" id="KMP-qa-FKk"/>
                 <constraint firstItem="tia-YG-npy" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="591" id="Ldh-qC-m9x"/>
                 <constraint firstItem="DDK-9h-w2a" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="111" id="URb-Us-5Va"/>
                 <constraint firstAttribute="bottom" secondItem="tia-YG-npy" secondAttribute="bottom" constant="149" id="Vyy-O4-zQf"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zZD-z2-h98" secondAttribute="trailing" constant="20" id="XAB-Fw-3TA"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="tia-YG-npy" secondAttribute="trailing" constant="268" id="Xto-fy-tW1"/>
-                <constraint firstItem="zZD-z2-h98" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="704" id="h8R-YR-xLA"/>
-                <constraint firstItem="zZD-z2-h98" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="308" id="psa-Gx-bZl"/>
                 <constraint firstItem="tia-YG-npy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="vdT-MJ-Hfj"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

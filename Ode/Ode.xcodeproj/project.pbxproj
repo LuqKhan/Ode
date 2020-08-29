@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EF70D96624F98DBA0020E360 /* tv.scn in Resources */ = {isa = PBXBuildFile; fileRef = EF70D96524F98DBA0020E360 /* tv.scn */; };
+		EF70D96C24F999A50020E360 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF70D96B24F999A50020E360 /* Grid.swift */; };
 		EFAE053024F589FD003249B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAE052F24F589FD003249B7 /* AppDelegate.swift */; };
 		EFAE053224F589FD003249B7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAE053124F589FD003249B7 /* SceneDelegate.swift */; };
 		EFAE053924F589FF003249B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFAE053824F589FF003249B7 /* Assets.xcassets */; };
@@ -24,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EF70D96524F98DBA0020E360 /* tv.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = tv.scn; sourceTree = "<group>"; };
+		EF70D96B24F999A50020E360 /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
 		EFAE052C24F589FD003249B7 /* Ode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFAE052F24F589FD003249B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFAE053124F589FD003249B7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -133,7 +137,9 @@
 		EFAE057C24F860F1003249B7 /* DropOdeVC */ = {
 			isa = PBXGroup;
 			children = (
+				EF70D96B24F999A50020E360 /* Grid.swift */,
 				EFAE057824F860EA003249B7 /* DropOdeViewController.swift */,
+				EF70D96524F98DBA0020E360 /* tv.scn */,
 				EFAE057924F860EA003249B7 /* DropOdeViewController.xib */,
 			);
 			path = DropOdeVC;
@@ -199,6 +205,7 @@
 			files = (
 				EFAE057B24F860EA003249B7 /* DropOdeViewController.xib in Resources */,
 				EFAE053C24F589FF003249B7 /* LaunchScreen.storyboard in Resources */,
+				EF70D96624F98DBA0020E360 /* tv.scn in Resources */,
 				EFAE053924F589FF003249B7 /* Assets.xcassets in Resources */,
 				EFAE054624F58B0E003249B7 /* LoginViewController.xib in Resources */,
 				EFAE054B24F58DA7003249B7 /* CreateOdeViewController.xib in Resources */,
@@ -221,6 +228,7 @@
 				EFAE053224F589FD003249B7 /* SceneDelegate.swift in Sources */,
 				EFAE054A24F58DA7003249B7 /* CreateOdeViewController.swift in Sources */,
 				EFAE057224F6AFA4003249B7 /* VideoPlayerView.swift in Sources */,
+				EF70D96C24F999A50020E360 /* Grid.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
